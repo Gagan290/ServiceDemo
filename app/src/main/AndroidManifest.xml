@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.servicedemo">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity android:name=".activity.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activity.NormalService.NormalServiceActivity" />
+
+        <service
+            android:name=".activity.NormalService.NormalBroadcastService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <service
+            android:name=".service.MyIntentService"
+            android:exported="false" />
+
+        <service
+            android:name=".service.JobSchedulerService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <receiver android:name=".receiver.CustomReceiver" />
+
+        <activity android:name=".activity.ForegroundService.ForegroundServiceActivity" />
+        <service android:name=".activity.ForegroundService.ForegroundService" />
+
+        <activity android:name=".activity.DownloadDataInNotificationProgressBar.DownloadDataInNotificationProgressbarActivity"/>
+
+    </application>
+</manifest>
